@@ -166,7 +166,7 @@ class AdaptyFlutterPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
                     cachePaywalls(paywalls)
                     cacheProducts(products)
 
-                    val getPaywallsResultJson = gson.toJson(GetPaywallsResult(paywalls.map(PaywallFlutterModel::from), products.map(ProductFlutterModel.Companion::from)))
+                    val getPaywallsResultJson = gson.toJson(GetPaywallsResult(paywalls.map(PaywallFlutterModel.Companion::from), products.map(ProductFlutterModel.Companion::from)))
 
                     // stream
                     channel.invokeMethod(MethodName.GET_PAYWALLS_RESULT.value, getPaywallsResultJson)
